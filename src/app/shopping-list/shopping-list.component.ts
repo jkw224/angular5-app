@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Ingredient } from '../shared/ingredient.interface';
+import { Ingredients } from '../shared/ingredients.mock';
+
 @Component({
-  selector: 'app-shopping-list',
-  templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.scss']
+    selector: 'app-shopping-list',
+    templateUrl: './shopping-list.component.html',
+    styleUrls: ['./shopping-list.component.scss']
 })
 export class ShoppingListComponent implements OnInit {
 
-  constructor() { }
+    ingredients = Ingredients;
 
-  ngOnInit() {
-  }
+    constructor() {
+        console.log('ingredients: ' + this.ingredients);
+    }
+
+    ngOnInit() {
+    }
 
 }
