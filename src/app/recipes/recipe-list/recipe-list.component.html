@@ -1,7 +1,7 @@
 <div class="recipe-list-container">
     <div class="row">
         <div class="col">
-            <button type="button" class="btn btn-primary">New Recipe</button>
+            <button type="button" class="btn btn-success">New Recipe</button>
         </div>
     </div>
     <hr>
@@ -13,18 +13,19 @@
                     class="list-group-item flex-column align-items-start"
                     href="#">
                     <div class="row d-flex mb-2">
-                        <h5 class="mb-1 col-12 col-lg-9">{{recipe.title}}</h5>
-                        <div class="d-flex flex-row justify-content-start align-items-start mt-1 col-12 col-lg-3">
+                        <h5 class="mb-1 col-12 col-xl-9">{{recipe.title}}</h5>
+                        <div class="dish-image d-flex flex-row col-12 col-xl-3 pr-2 justify-content-xl-end">
                             <small class="">{{recipe.dateAdded}}</small>
                         </div>
                     </div>
                     <div class="row d-flex">
-                        <small class="mb-1 col-12 col-lg-9">{{recipe.description}}</small>
-                        <span class="d-flex flex-row justify-content-start align-items-start col-12 col-lg-3">
+                        <small class="mb-1 col-12 col-xl-9">{{recipe.description}}</small>
+                        <span class="dish-image-span d-flex flex-row col-12 col-xl-3 pr-2">
                             <img
                             [src]="recipe.imagePath"
                             style="max-height: 50px; max-width: 50px;"
-                            alt="">
+                            alt=""
+                            align="end">
                         </span>
                     </div>
                 </a>
