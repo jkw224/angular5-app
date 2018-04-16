@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Ingredient } from '../shared/ingredient.interface';
-import { Ingredients } from '../shared/ingredients.mock';
+// import { Ingredients } from '../shared/ingredients.mock';
 
 @Component({
     selector: 'app-shopping-list',
@@ -10,10 +10,10 @@ import { Ingredients } from '../shared/ingredients.mock';
 })
 export class ShoppingListComponent implements OnInit {
 
-    ingredients = Ingredients;
+    // ingredients = Ingredients;
 
     constructor() {
-        console.log('ingredients: ' + this.ingredients);
+        // console.log('ingredients: ' + this.ingredients);
     }
 
     ngOnInit() {
