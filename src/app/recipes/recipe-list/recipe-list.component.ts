@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { Recipe } from '../recipe.interface';
 import { Recipes } from '../recipes.mock';
+// import { RecipeList } from '../../shared/recipe-list.mock';
 
 @Component({
     selector: 'app-recipe-list',
@@ -9,7 +10,7 @@ import { Recipes } from '../recipes.mock';
     styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit, AfterViewInit {
-
+    // recipeList: any = RecipeList;
     recipes: Recipe[] = Recipes.data;
 
     constructor() { }
