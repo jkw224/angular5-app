@@ -1,4 +1,8 @@
 <div class="row mr-3 ml-3">
-    <app-recipe-list class="col-5 col-md-3"></app-recipe-list>
-    <app-recipe-details class="col-7 col-md-9"></app-recipe-details>
+    <div class="col-5 col-md-3">
+        <app-recipe-list (recipeWasSelected)=assignRecipe($event)></app-recipe-list>
+    </div>
+    <div class="col-7 col-md-9">
+        <app-recipe-details [recipe]=recipe></app-recipe-details>
+    </div>
 </div>

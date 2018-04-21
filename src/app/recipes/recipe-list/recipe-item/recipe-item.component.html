@@ -1,3 +1,24 @@
-<p>
-  recipe-item works!
-</p>
+<div class="recipe-item-container list-group">
+    <a
+        href="#"
+        *ngFor="let recipe of recipes"
+        (click)="onRecipeClicked(recipe)"
+        class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="row d-flex mb-2">
+            <h5 class="mb-1 col-12 col-xl-9">{{recipe.title}}</h5>
+            <div class="d-flex flex-row col-12 col-xl-3 justify-content-xl-end">
+                <small class="">{{recipe.dateAdded}}</small>
+            </div>
+        </div>
+        <div class="row food-image d-flex">
+            <small class="mb-1 col-12 col-xl-9">{{recipe.description}}</small>
+            <span class="d-flex col-12 col-xl-3">
+                <img
+                [src]="recipe.imagePath"
+                style="max-height: 50px; max-width: 50px;"
+                alt=""
+                align="end">
+            </span>
+        </div>
+    </a>
+</div>

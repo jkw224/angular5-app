@@ -1,11 +1,17 @@
-<div class="row mt-4 mr-3 ml-3">
+<div class="row mt-4 mr-3 ml-3" *ngIf="recipe; else elseBlock">
     <div class="col">
-        <app-shopping-edit></app-shopping-edit>
+        <app-shopping-edit
+            [recipe]="recipe"
+            (ingredientAdded)="onIngredientAdded($event)"></app-shopping-edit>
         <hr>
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let ingredient of ingredients">
+            <h1>{{ recipe.title }}</h1>
+            <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
                 {{ingredient.name}} ({{ingredient.amount}})
             </li>
         </ul>
     </div>
 </div>
+<ng-template #elseBlock>
+    <h1>Select a Recipe:</h1>
+</ng-template>

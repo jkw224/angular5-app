@@ -6,31 +6,11 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col">
-            <div class="list-group">
-                <a
-                    *ngFor="let recipe of recipes"
-                    class="list-group-item flex-column align-items-start"
-                    href="#">
-                    <div class="row d-flex mb-2">
-                        <h5 class="mb-1 col-12 col-xl-9">{{recipe.title}}</h5>
-                        <div class="dish-image d-flex flex-row col-12 col-xl-3 pr-2 justify-content-xl-end">
-                            <small class="">{{recipe.dateAdded}}</small>
-                        </div>
-                    </div>
-                    <div class="row d-flex">
-                        <small class="mb-1 col-12 col-xl-9">{{recipe.description}}</small>
-                        <span class="dish-image-span d-flex flex-row col-12 col-xl-3 pr-2">
-                            <img
-                            [src]="recipe.imagePath"
-                            style="max-height: 50px; max-width: 50px;"
-                            alt=""
-                            align="end">
-                        </span>
-                    </div>
-                </a>
-            </div>
+        <div class="flex-column">
+            <app-recipe-item
+                [recipes]="recipes"
+                (selectedRecipe)="onRecipeRecieved($event)">
+            </app-recipe-item>
         </div>
     </div>
-    <app-recipe-item></app-recipe-item>
 </div>
