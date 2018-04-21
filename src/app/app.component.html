@@ -1,7 +1,7 @@
 <div class="container-fluid" style="padding: 0;">
     <app-header></app-header>
-    <div class="body-container">
-        <app-recipes></app-recipes>
-        <app-shopping-list></app-shopping-list>
+    <div class="body-container mt-3">
+        <app-recipes (emitRecipe)="recipeSelected($event)"></app-recipes>
+        <app-shopping-list [recipe]="recipe"></app-shopping-list>
     </div>
 </div>

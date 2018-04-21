@@ -1,12 +1,2 @@
 @import "../../../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
-.recipe-list-container {
-    margin: 20px 0;
-
-    .dish-image-span {
-
-        @include media-breakpoint-up(xl) {
-            justify-content: flex-end;
-        }
-    }
-}

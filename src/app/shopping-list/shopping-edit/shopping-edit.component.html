@@ -5,27 +5,29 @@
                 <div class="col col-sm-4 form-group">
                     <!-- <label for="">Ingredient</label> -->
                     <input
-                        type="email"
+                        type="text"
                         class="form-control"
-                        id="exampleInputEmail1"
+                        id="ingredientName"
                         aria-describedby="emailHelp"
-                        placeholder="Ingredient">
+                        placeholder="Ingredient"
+                        #nameInput>
                     <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                 </div>
                 <div class="col col-sm-2 form-group">
                     <!-- <label for="exampleInputPassword1">Amount</label> -->
                     <input
-                        type="password"
+                        type="number"
                         class="form-control"
-                        id="exampleInputPassword1"
-                        placeholder="Amount">
+                        id="ingredientAmount"
+                        placeholder="Amount"
+                        #amountInput>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <button type="button" class="btn btn-success">Add</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                    <button type="button" class="btn btn-primary">Clear</button>
+                    <button type="button" class="btn btn-success" (click)="onAddIngredient()">Add</button>
+                    <button type="button" class="btn btn-danger" (click)="onDeleteIngredient()">Delete</button>
+                    <button type="button" class="btn btn-primary" (click)="onClearIngredient()">Clear</button>
                 </div>
             </div>
         </form>

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { Ingredient } from '../shared/ingredient.interface';
-// import { Ingredients } from '../shared/ingredients.mock';
+import { iIngredient } from '../shared/ingredient.interface';
 
 @Component({
     selector: 'app-shopping-list',
@@ -10,13 +9,17 @@ import { Ingredient } from '../shared/ingredient.interface';
 })
 export class ShoppingListComponent implements OnInit {
 
-    // ingredients = Ingredients;
+    @Input() recipe;
 
     constructor() {
-        // console.log('ingredients: ' + this.ingredients);
+        // console.log('Shopping Recipe: ', this.recipe);
     }
 
     ngOnInit() {
+    }
+
+    onIngredientAdded(newIngredient: iIngredient ) {
+        this.recipe.ingredients.push(newIngredient);
     }
 
 }

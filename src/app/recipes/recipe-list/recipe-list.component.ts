@@ -1,26 +1,24 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 import { Recipe } from '../recipe.interface';
-import { Recipes } from '../recipes.mock';
-// import { RecipeList } from '../../shared/recipe-list.mock';
+import { RecipeList } from '../recipe-list.mock';
 
 @Component({
     selector: 'app-recipe-list',
     templateUrl: './recipe-list.component.html',
     styleUrls: ['./recipe-list.component.scss']
 })
-export class RecipeListComponent implements OnInit, AfterViewInit {
-    // recipeList: any = RecipeList;
-    recipes: Recipe[] = Recipes.data;
+export class RecipeListComponent implements OnInit {
+
+    @Output() recipeWasSelected = new EventEmitter<Recipe>();
+    recipes: Recipe[] = RecipeList.recipes;
 
     constructor() { }
 
-    ngOnInit() {
+    ngOnInit() { }
 
+    onRecipeRecieved(recipe: Recipe) {
+        this.recipeWasSelected.emit(recipe);
     }
-
-    ngAfterViewInit() {
-        console.log(this.recipes);
-    }
-
 }
